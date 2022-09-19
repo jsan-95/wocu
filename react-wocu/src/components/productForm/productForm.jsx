@@ -27,9 +27,13 @@ export function ProductForm() {
       validation.qty = "La cantidad debe ser mayor que 0";
     }
 
-    if (validation) {
+    if (Object.keys(validation).length) {
       setError(validation);
+      console.log("pasoo");
+      console.log(validation);
       return;
+    } else {
+      setError({});
     }
     
     dispatch(addProduct(data))
