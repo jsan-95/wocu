@@ -39,7 +39,7 @@ export function ListCart() {
         <Row>          
         {
           Object.keys(cart).map(product => 
-            (<Col xs="3" className="mt-2 mb-2">
+            (<Col key={product} xs="3" className="mt-2 mb-2">
               <CartItem product={product} qty={cart[product]}></CartItem>
             </Col>
             )
