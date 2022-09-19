@@ -28,7 +28,7 @@ export function ListCart() {
   const cart = useSelector((state) => state.app.cart);
   const productsQty = Object.keys(cart).map(product => cart[product]);
   const totalProducts = productsQty.reduce(
-    (previousValue, currentValue) => previousValue + currentValue,
+    (previousValue, currentValue) => Number(previousValue) + Number(currentValue),
     0
   );
   
